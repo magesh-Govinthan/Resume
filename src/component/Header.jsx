@@ -87,7 +87,13 @@ function Header() {
           </div>
           <h1 className="new">Full Stack Web Developer</h1>
           <div className="btn-div">
-            <button className="btn-my">My resume</button>
+            <a
+              href="https://drive.google.com/file/d/13BXJ0DvveTJlDUrBItFpLpxCWNVKvXEq/view?usp=sharing"
+              target="_blank"
+              className="btn-my"
+            >
+              My resume
+            </a>
           </div>
         </div>
         <div className="home-child2">
@@ -518,38 +524,31 @@ function Header() {
           <h1 className="choose">Contact</h1>
           <div className="dash2"></div>
         </div>
-    <section className="contact-section">
+        <section className="contact-section">
+          <div className="contact-left">
+            <h1>
+              Have a project?
+              <br />
+              Let’s talk!
+            </h1>
 
-  
+            <button>Submit</button>
+          </div>
 
-    <div className="contact-left">
-      <h1>
-        Have a project?<br/>
-        Let’s talk!
-      </h1>
+          <div className="contact-right">
+            <div className="input-box">
+              <input type="text" placeholder="Name" />
+            </div>
 
-      <button>Submit</button>
-    </div>
+            <div className="input-box">
+              <input type="email" placeholder="Email" />
+            </div>
 
-
-
-    <div className="contact-right">
-      
-      <div className="input-box">
-        <input type="text" placeholder="Name"/>
-      </div>
-
-      <div className="input-box">
-        <input type="email" placeholder="Email"/>
-      </div>
-
-      <div className="input-box">
-        <textarea placeholder="Message"></textarea>
-      </div>
-
-    </div>
-
-  </section>
+            <div className="input-box">
+              <textarea placeholder="Message"></textarea>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   );
