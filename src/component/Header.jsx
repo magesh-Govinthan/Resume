@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
- import axios from "axios";
+import axios from "axios";
 import assets from "../assets/mahires.jpeg";
 import event from "../assets/events.png";
 import meal from "../assets/meals.png";
@@ -26,23 +26,42 @@ import { FaCss, FaEarDeaf, FaLinkedin } from "react-icons/fa6";
 import { useState } from "react";
 
 function Header() {
-  //  const [formData, setFormData] = useState({
-  //    name: "",
-  //    email: "",
-  //    message:""
-  //  });
- 
+   const [formData, setFormData] = useState({
+     name: "",
+     email: "",
+     message:""
+   });
 
-  // const sendMessage = async () => {
-  //   try {
-  //     const response = await axios.post("http://localhost:5000/api/contact", 
-  //       {...formData});
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    };
 
-  //     alert(response.data.message);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const sendMessage = async () => {
+    try {
+      const response = await axios.post(
+        "https://be-resume-fnts.onrender.com/api/contact/",
+        {
+          ...formData,
+        },
+      );
+
+      alert(response.data.message);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleSubmit=(e)=>{
+      e.preventDefault();
+     sendMessage(formData);
+    setFormData({
+    name: "",
+    email: "",
+    message: "",
+  });
+  }
   return (
     <>
       <div className="Parent-head">
@@ -531,22 +550,40 @@ function Header() {
               <br />
               Let’s talk!
             </h1>
-
-            <button>Submit</button>
           </div>
 
           <div className="contact-right">
-            <div className="input-box">
-              <input type="text" placeholder="Name" />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="input-box">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="input-box">
-              <input type="email" placeholder="Email" />
-            </div>
+              <div className="input-box">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
 
-            <div className="input-box">
-              <textarea placeholder="Message"></textarea>
-            </div>
+              <div className="input-box">
+                <textarea
+                  placeholder="Message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </section>
       </section>

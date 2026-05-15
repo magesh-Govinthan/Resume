@@ -571,13 +571,12 @@ a.btn-my {
   align-items: center;
 }
 .contact-section {
-  width: 90%;
+  width: 80%;
   margin-top:-10px;
   display: flex;
   justify-content: space-between;
   align-items: start;
   padding: 80px 8%;
-  
   background-color: #0d1117;
   color: white;
 }
@@ -593,7 +592,7 @@ a.btn-my {
   margin-bottom: 40px;
 }
 
-.contact-left button {
+.contact-right button {
   padding: 16px 40px;
   border: none;
   background: #f5a623;
@@ -604,7 +603,7 @@ a.btn-my {
   transition: 0.3s;
 }
 
-.contact-left button:hover {
+.contact-right button:hover {
   background: #f5a623;
   transform: translateX(20px);
 }
@@ -637,6 +636,7 @@ a.btn-my {
 .input-box input::placeholder,
 .input-box textarea::placeholder {
   color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
 }
 
 .home,
@@ -647,7 +647,12 @@ a.btn-my {
     padding-bottom:30px;
     border-bottom: 3px solid rgba(255, 255, 255, 0.08);
 }
-
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #0d1117 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 @media screen and (max-width: 1024px) {
   .Parent-head {
@@ -761,7 +766,7 @@ a.btn-my {
   }
 
   .event-image {
-    width: 85%;
+    width:85%;
     height: 220px;
   }
 
@@ -957,7 +962,7 @@ a.btn-my {
      line-height: 1.5;
  }
 
- .contact-left button {
+ .contact-right button {
      width: 140px;
      height: 45px;
      font-size: 16px;
