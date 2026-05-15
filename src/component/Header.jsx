@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
  import axios from "axios";
-import assets from "../assets/mahires.png";
+import assets from "../assets/mahires.jpeg";
 import event from "../assets/events.png";
 import meal from "../assets/meals.png";
 import expense from "../assets/expense.png";
